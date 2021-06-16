@@ -1,0 +1,17 @@
+.photo {
+  width: 60px;
+  height: 60px;
+}
+
+.autor-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  text-align: center;
+}
+
+.list {
+  /* display: flex; */
+}
