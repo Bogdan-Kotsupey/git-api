@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { getRepo } from './Api';
-import './ReposList.css';
 import { Route, Link } from "react-router-dom";
+
+import { Card, Image, Input, Form, Button } from 'semantic-ui-react'
+
+import { getRepo } from './Api';
+
 import { Details } from './Details';
+import './ReposList.css';
+
+
 
 export const ReposList = () => {
   const [repos, setRepos] = useState([]);
@@ -49,36 +55,54 @@ export const ReposList = () => {
     }
   });
 
+  const options = [
+    { key: 'date', text: 'sort by date', value: 'date' },
+    { key: 'title', text: 'sort by title', value: 'title' },
+  ]
+
   return (
     <>
       <Route path='/git-api' exact>
-        <input placeholder="Enter github name" value={githubName} onChange={nameEnter} type="text"></input>
-        <button onClick={nameSearch}>Search</button>
+        <div className='navbar'>Github Search</div>
+        <div className="ui focus input search">
+          <input
+            value={githubName}
+            onChange={nameEnter}
+            type="text"
+            placeholder="Enter github name"
+          />
+          <Button onClick={nameSearch} primary>Search</Button>
+        </div>
         {name &&
           <>
             <h1 className='title'>List of Repositories</h1>
-            <input
-              type='text'
-              value={query}
-              onChange={hendleOnChange}
-            >
-            </input>
-            <select value={sort} onChange={reposSort}>
-              <option value=''>choose filter</option>
-              <option value='date'>by date uppdate</option>
-              <option value='title'>by title</option>
-            </select>
+            <Form.Field widths='equal' className='searchTitle' >
+              <Input type='text' value={query} onChange={hendleOnChange} placeholder="Search by title"></Input>
+              <select value={sort} onChange={reposSort} className='select'>
+                <option value='date'>by date uppdate</option>
+                <option value='title'>by title</option>
+              </select>
+            </Form.Field>
             <ul className='list-group'>
               {repos.filter(repo => repo.name.toLowerCase().includes(query.toLocaleLowerCase())).map(repo => (
                 <li key={repo.id} className='list-group-item'>
-                  <div className='autor-container'>
-                    <p className='autor'>{`Autor: ${repo.owner.login}`}</p>
-                    <img className='photo' alt='autor of repo' src={repo.owner.avatar_url} />
-                  </div>
-                  <Link onClick={() => onClick(repo)} className='name' to='/details'>{`Title: ${repo.name}`}</Link>
-                  <p className='details'>{`Details: ${repo.description}`}</p>
-                  <p className='update'>{`Last uppdate: ${repo.updated_at}`}</p>
-                  <p className='rating'>{`Rating: ${repo.size}`}</p>
+                  <Card className='card'>
+                    <Image src={repo.owner.avatar_url} />
+                    <Card.Content>
+                      <Card.Header>{`autor: ${repo.owner.login}`}</Card.Header><br />
+                      <Link onClick={() => onClick(repo)} className='name' to='/details'>{`Title: ${repo.name}`}</Link>
+                      <br />
+                      <Card.Meta>
+                        <span className='date'>{`last update: ${repo.updated_at}`}</span>
+                      </Card.Meta><br />
+                      <Card.Description className="description">
+                        {repo.description}
+                      </Card.Description>
+                    </Card.Content>
+                    <Card.Content extra>
+                      <p className='rating'>{`Rating: ${repo.size}`}</p>
+                    </Card.Content>
+                  </Card>
                 </li>
               ))}
             </ul>

@@ -1,17 +1,70 @@
-.photo {
-  width: 60px;
-  height: 60px;
+.navbar {
+  padding: 20px;
+  background-color: blanchedalmond;
 }
 
-.autor-container {
-  display: flex;
-  flex-direction: row;
+.search {
+  left: 550px;
+  padding: 20px 0;
 }
 
 .title {
   text-align: center;
 }
 
-.list {
-  /* display: flex; */
+.list-group {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 20px;
+}
+
+.list-group-item {
+  list-style: none;
+  height: 600px;
+}
+
+.card {
+  height: 500px;
+}
+
+.description {
+  max-height: 75px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.searchTitle {
+  display: flex;
+  justify-content: center;
+}
+
+select {
+  opacity: 80%;
+  color: rgba(0,0,0,.87);
+  outline: 0;
+  -webkit-tap-highlight-color: rgba(255,255,255,0);
+  line-height: 1.21428571em;
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  background: #fff;
+  border: 1px solid rgba(34,36,38,.15);
+  color: rgba(0,0,0,.87);
+  border-radius: .28571429rem;
+  transition: box-shadow .1s ease,border-color .1s ease;
+  box-shadow: none;
+}
+
+.select:focus {
+  border: 1px solid lightblue;
+}
+
+.edit {
+  width: 700px;
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
+.link {
+  font-size: 1.5em;
+  font-weight: bolder;
 }
