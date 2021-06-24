@@ -40,7 +40,7 @@
 }
 
 select {
-  opacity: 80%;
+  opacity: 0.8;
   color: rgba(0,0,0,.87);
   outline: 0;
   -webkit-tap-highlight-color: rgba(255,255,255,0);
