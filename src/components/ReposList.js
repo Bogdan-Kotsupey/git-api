@@ -55,11 +55,6 @@ export const ReposList = () => {
     }
   });
 
-  const options = [
-    { key: 'date', text: 'sort by date', value: 'date' },
-    { key: 'title', text: 'sort by title', value: 'title' },
-  ]
-
   return (
     <>
       <Route path='/git-api' exact>
@@ -79,8 +74,8 @@ export const ReposList = () => {
             <Form.Field widths='equal' className='searchTitle' >
               <Input type='text' value={query} onChange={hendleOnChange} placeholder="Search by title"></Input>
               <select value={sort} onChange={reposSort} className='select'>
-                <option value='date'>by date uppdate</option>
-                <option value='title'>by title</option>
+                <option value='date'>sort by date</option>
+                <option value='title'>sort by title</option>
               </select>
             </Form.Field>
             <ul className='list-group'>

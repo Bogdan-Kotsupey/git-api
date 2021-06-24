@@ -57,14 +57,3 @@ select {
 .select:focus {
   border: 1px solid lightblue;
 }
-
-.edit {
-  width: 700px;
-  font-size: 1.5em;
-  font-weight: bolder;
-}
-
-.link {
-  font-size: 1.5em;
-  font-weight: bolder;
-}

@@ -1,0 +1,47 @@
+.edit-container {
+  position: relative;
+  top: 50px;
+  left: 20%;
+}
+
+.repo-title {
+  position: relative;
+  top: 50px;
+  left: 20%;
+}
+
+.edit {
+  width: 700px;
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
+.link {
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
+.readme {
+  padding: 50px;
+  margin: 50px 200px 20px;
+  border: 2px solid black;
+  width: 70%;
+}
+
+.save-button {
+  height: 33px;
+  padding: 20px;
+}
+
+.edit-button {
+  height: 33px;
+}
+
+.tags-and-zip {
+  display: flex;
+  justify-content: center;
+}
+
+.tags {
+  margin-right: 50px;
+}
