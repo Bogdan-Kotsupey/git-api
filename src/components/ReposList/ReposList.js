@@ -3,9 +3,9 @@ import { Route, Link } from "react-router-dom";
 
 import { Card, Image, Input, Form, Button } from 'semantic-ui-react'
 
-import { getRepo } from './Api';
+import { getRepo } from '../Api';
 
-import { Details } from './Details';
+import { Details } from '../Details/Details';
 import './ReposList.css';
 
 
@@ -14,7 +14,7 @@ export const ReposList = () => {
   const [repos, setRepos] = useState([]);
   const [query, setQuery] = useState('');
   const [sort, setSort] = useState('');
-  const [githubName, setGithubName] = useState('');
+  const [githubName, setGithubName] = useState(null);
   const [name, setName] = useState(false);
 
   const nameSearch = () => {
@@ -38,12 +38,14 @@ export const ReposList = () => {
   }
 
   useEffect(() => {
-    getRepo(githubName)
-      .then(user => user)
-      .then(user =>
-        fetch(user.repos_url)
-          .then(result => result.json())
-          .then(repos => setRepos(repos)))
+    if (githubName) {
+      getRepo(githubName)
+        .then(user => user)
+        .then(user =>
+          fetch(user.repos_url)
+            .then(result => result.json())
+            .then(repos => setRepos(repos)))
+    }
   }, [githubName]);
 
   repos.sort((a, b) => {

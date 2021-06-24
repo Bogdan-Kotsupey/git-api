@@ -3,12 +3,14 @@ import React, { useEffect, useState } from 'react';
 import marked from 'marked';
 import DOMPurify from 'dompurify';
 
+import classNames from "classnames";
+
 import { Item, Button } from 'semantic-ui-react'
 
 import './Details.css';
 
 
-import { getReadme } from './Api';
+import { getReadme } from '../Api';
 
 export const Details = () => {
   const saved = JSON.parse(localStorage.getItem('repo'));
@@ -16,24 +18,29 @@ export const Details = () => {
   const [details, setDetails] = useState(saved.description);
   const [isEditing, setIsEditing] = useState(false);
   const [readmeElement, setReadmeElement] = useState(null);
-  const [isSaved, setIsSaved] = useState(true);
+  const [isNotSaved, setIsNotSaved] = useState(false);
 
-
+  useEffect(() => {
+    if (localStorage.getItem(saved.id) && localStorage.getItem(saved.name)) {
+      setIsEditing(localStorage.getItem(saved.id));
+      setIsNotSaved(true);
+      setDetails(localStorage.getItem(saved.name));
+    }
+  }, [])
 
   const edit = () => {
     setIsEditing(true);
-    setIsSaved(false);
+    localStorage.setItem(saved.id, isEditing)
   }
 
   const changeText = (event) => {
     setDetails(event.target.value)
-    localStorage.setItem('details', details);
-    console.log(localStorage.details)
+    localStorage.setItem(saved.name, details);
   }
 
   const saveText = () => {
     setIsEditing(false)
-    setIsSaved(true);
+    setIsNotSaved(false);
   }
 
   const b64_to_utf8 = (str) => decodeURIComponent(escape(window.atob(str)));
@@ -60,9 +67,15 @@ export const Details = () => {
       {isEditing ?
         (
           <div className='edit-container'>
-            <input className='edit' placeholder='enter github name' value={details} type='text' onChange={changeText}></input>
+            <input
+              className={classNames('edit', {error: isNotSaved})}
+              placeholder='enter github name'
+              value={details} type='text'
+              onChange={changeText}
+            >
+            </input>
             <Button className='save-button' value={details} onClick={saveText}>save</Button>
-            <p>{isSaved ? (null) : (<p>you forgot to save changes</p>)}</p>
+            {isNotSaved && <p className='error-message'>you forgot to save changes</p>}
           </div>
         )
         :

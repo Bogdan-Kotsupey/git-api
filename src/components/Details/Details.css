@@ -40,8 +40,22 @@
 .tags-and-zip {
   display: flex;
   justify-content: center;
+  margin-top: 50px;
 }
 
 .tags {
   margin-right: 50px;
+}
+
+.error {
+  width: 700px;
+  font-size: 1.5em;
+  font-weight: bolder;
+  border: 2px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 20px;
+  font-style: italic;
 }
