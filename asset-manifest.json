@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/git-api/static/css/main.c8492c10.chunk.css",
-    "main.js": "/git-api/static/js/main.f26126df.chunk.js",
-    "main.js.map": "/git-api/static/js/main.f26126df.chunk.js.map",
-    "runtime-main.js": "/git-api/static/js/runtime-main.29394071.js",
-    "runtime-main.js.map": "/git-api/static/js/runtime-main.29394071.js.map",
-    "static/css/2.61b4cb56.chunk.css": "/git-api/static/css/2.61b4cb56.chunk.css",
-    "static/js/2.7c2d0a4e.chunk.js": "/git-api/static/js/2.7c2d0a4e.chunk.js",
-    "static/js/2.7c2d0a4e.chunk.js.map": "/git-api/static/js/2.7c2d0a4e.chunk.js.map",
-    "static/js/3.6205b985.chunk.js": "/git-api/static/js/3.6205b985.chunk.js",
-    "static/js/3.6205b985.chunk.js.map": "/git-api/static/js/3.6205b985.chunk.js.map",
+    "main.css": "/git-api/static/css/main.c76316e0.chunk.css",
+    "main.js": "/git-api/static/js/main.441ba79d.chunk.js",
+    "main.js.map": "/git-api/static/js/main.441ba79d.chunk.js.map",
+    "runtime-main.js": "/git-api/static/js/runtime-main.2a79bbd8.js",
+    "runtime-main.js.map": "/git-api/static/js/runtime-main.2a79bbd8.js.map",
+    "static/css/2.9cf5f463.chunk.css": "/git-api/static/css/2.9cf5f463.chunk.css",
+    "static/js/2.0dfd4624.chunk.js": "/git-api/static/js/2.0dfd4624.chunk.js",
+    "static/js/2.0dfd4624.chunk.js.map": "/git-api/static/js/2.0dfd4624.chunk.js.map",
+    "static/js/3.b09a8a69.chunk.js": "/git-api/static/js/3.b09a8a69.chunk.js",
+    "static/js/3.b09a8a69.chunk.js.map": "/git-api/static/js/3.b09a8a69.chunk.js.map",
     "index.html": "/git-api/index.html",
-    "static/css/2.61b4cb56.chunk.css.map": "/git-api/static/css/2.61b4cb56.chunk.css.map",
-    "static/css/main.c8492c10.chunk.css.map": "/git-api/static/css/main.c8492c10.chunk.css.map",
-    "static/js/2.7c2d0a4e.chunk.js.LICENSE.txt": "/git-api/static/js/2.7c2d0a4e.chunk.js.LICENSE.txt"
+    "static/css/2.9cf5f463.chunk.css.map": "/git-api/static/css/2.9cf5f463.chunk.css.map",
+    "static/css/main.c76316e0.chunk.css.map": "/git-api/static/css/main.c76316e0.chunk.css.map",
+    "static/js/2.0dfd4624.chunk.js.LICENSE.txt": "/git-api/static/js/2.0dfd4624.chunk.js.LICENSE.txt",
+    "static/media/semantic.min.css": "/git-api/static/media/outline-icons.ddae9b1b.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.29394071.js",
-    "static/css/2.61b4cb56.chunk.css",
-    "static/js/2.7c2d0a4e.chunk.js",
-    "static/css/main.c8492c10.chunk.css",
-    "static/js/main.f26126df.chunk.js"
+    "static/js/runtime-main.2a79bbd8.js",
+    "static/css/2.9cf5f463.chunk.css",
+    "static/js/2.0dfd4624.chunk.js",
+    "static/css/main.c76316e0.chunk.css",
+    "static/js/main.441ba79d.chunk.js"
   ]
 }
