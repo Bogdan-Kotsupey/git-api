@@ -1,1 +1,1 @@
-[DEMO-LINK](https://github.com/Bogdan-Kotsupey/git-api)
+[DEMO-LINK](https://bogdan-kotsupey.github.io/git-api/)
