@@ -22,7 +22,6 @@ export const ReposList = () => {
   }
 
   const nameSearch = () => {
-    setName(true);
     setSearch(githubName);
   }
 
@@ -48,7 +47,8 @@ export const ReposList = () => {
         .then(user =>
           fetch(user.repos_url)
             .then(result => result.json())
-            .then(repos => setRepos(repos)))
+            .then(repos => setRepos(repos))
+            .then(setName(true)))
     }
   }, [search]);
 
@@ -79,7 +79,7 @@ export const ReposList = () => {
             <Button onClick={nameSearch} primary>Search</Button>
           </div>
         )}
-        {name && repos.length === 0 && <p className='notFound'>user not found</p>}
+        {repos.length === 0 && name && <p className='notFound'>user not found</p>}
         {repos.length > 0 &&
           <>
             <h1 className='title'>List of Repositories</h1>
