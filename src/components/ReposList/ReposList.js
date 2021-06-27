@@ -10,7 +10,7 @@ import './ReposList.css';
 
 
 export const ReposList = () => {
-  const [repos, setRepos] = useState([]);
+  const [repos, setRepos] = useState(JSON.parse(localStorage.getItem('repos')) || []);
   const [query, setQuery] = useState('');
   const [sort, setSort] = useState('');
   const [githubName, setGithubName] = useState('');
@@ -21,12 +21,21 @@ export const ReposList = () => {
     setGithubName(event.target.value)
   }
 
+  const nameSearch = () => {
+    setName(true);
+    setSearch(githubName);
+  }
+
   const chooseRepo = (repo) => {
     localStorage.setItem('repo', JSON.stringify(repo));
   }
 
   const hendleOnChange = (event) => {
     setQuery(event.target.value);
+  }
+
+  const clearLocalStorage = () => {
+    localStorage.clear();
   }
 
   const reposSort = (event) => {
@@ -36,7 +45,6 @@ export const ReposList = () => {
   useEffect(() => {
     if (search) {
       getRepo(search)
-        .then(user => user)
         .then(user =>
           fetch(user.repos_url)
             .then(result => result.json())
@@ -44,10 +52,7 @@ export const ReposList = () => {
     }
   }, [search]);
 
-  const nameSearch = () => {
-    setName(true);
-    setSearch(githubName);
-  }
+  localStorage.setItem('repos', JSON.stringify(repos))
 
   repos.sort((a, b) => {
     switch (sort) {
@@ -62,17 +67,20 @@ export const ReposList = () => {
     <>
       <Route path='/git-api' exact>
         <div className='navbar'>Github Search</div>
-        <div className="ui focus input search">
-          <input
-            value={githubName}
-            onChange={nameEnter}
-            type="text"
-            placeholder="Enter github name"
-          />
-          <Button onClick={nameSearch} primary>Search</Button>
-        </div>
+        {repos.length === 0 && (
+          <div className="ui focus input search">
+            <p>{JSON.parse(localStorage.getItem('repos'))}</p>
+            <input
+              value={githubName}
+              onChange={nameEnter}
+              type="text"
+              placeholder="Enter github name"
+            />
+            <Button onClick={nameSearch} primary>Search</Button>
+          </div>
+        )}
         {name && repos.length === 0 && <p className='notFound'>user not found</p>}
-        {name && repos.length > 0 &&
+        {repos.length > 0 &&
           <>
             <h1 className='title'>List of Repositories</h1>
             <Form.Field widths='equal' className='searchTitle' >
@@ -91,9 +99,10 @@ export const ReposList = () => {
                 <option value='date'>sort by date</option>
                 <option value='title'>sort by title</option>
               </select>
+              <Button onClick={clearLocalStorage} primary>clear localstorage</Button>
             </Form.Field>
             <ul className='list-group'>
-              {repos.filter(repo => repo.name.toLowerCase().includes(query.toLocaleLowerCase())).map(repo => (
+              {repos.length > 0 && repos.filter(repo => repo.name.toLowerCase().includes(query.toLocaleLowerCase())).map(repo => (
                 <li key={repo.id} className='list-group-item'>
                   <Card className='card'>
                     <Image src={repo.owner.avatar_url} />
