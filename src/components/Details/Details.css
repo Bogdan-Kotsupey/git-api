@@ -40,10 +40,13 @@
 
 .zip {
   padding: 10px;
-  display: flex;
-  justify-content: center;
   font-size: 1.5em;
   font-weight: bolder;
+}
+
+.link-container {
+  display: flex;
+  justify-content: center;
 }
 
 .tags {
@@ -58,10 +61,12 @@
 }
 
 .error {
-  width: 700px;
-  font-size: 1.5em;
-  font-weight: bolder;
   border: 2px solid red;
+  font-size: 1.714rem;
+  line-height: 1.28571429em;
+  font-weight: 700;
+  width: 90%;
+  height: 30px;
 }
 
 .error-message {

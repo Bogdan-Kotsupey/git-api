@@ -107,7 +107,7 @@ export const ReposList = () => {
                         {`Title: ${repo.name}`}
                       </Link><br />
                       <Card.Meta>
-                        <span className='date'>{`last update: ${repo.updated_at}`}</span>
+                        <span className='date'>{`last update: ${repo.updated_at.replace('T', ' at ').replace('Z', '')}`}</span>
                       </Card.Meta><br />
                       <Card.Description className="description">
                         {repo.description}

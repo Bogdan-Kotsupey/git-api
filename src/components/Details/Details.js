@@ -21,40 +21,41 @@ export const Details = () => {
   const [readmeElement, setReadmeElement] = useState('');
   const [isNotSaved, setIsNotSaved] = useState(false);
 
-  useEffect(() => {
-    if (localStorage.getItem(saved.id) && localStorage.getItem(saved.node_id)) {
-      setIsEditing(localStorage.getItem(saved.id));
-      setIsNotSaved(true);
-      setDetails(localStorage.getItem(saved.node_id));
-    }
-  }, [])
-
   const edit = () => {
     setIsEditing(true);
     localStorage.setItem(saved.id, isEditing)
   }
 
-  const hendleOnChange = (event) => {
-    setDetails(event.target.value)
-    localStorage.setItem(saved.node_id, details);
-  }
-
   const saveText = () => {
-    setIsEditing(false)
+    setIsEditing(false);
     setIsNotSaved(false);
+    localStorage.removeItem(saved.id);
   }
 
   const b64_to_utf8 = (str) => decodeURIComponent(escape(window.atob(str)));
 
   useEffect(() => {
+    if (localStorage.getItem(saved.id)) {
+      setIsEditing(true);
+      setIsNotSaved(true);
+    }
+
+    if(localStorage.getItem(saved.node_id)) {
+      setDetails(localStorage.getItem(saved.node_id))
+    }
+
+    getTags()
+    .then(result => setTags(result));
+
     getReadme(saved)
       .then(result => setReadme(result.content))
   }, []);
 
   useEffect(() => {
-    getTags()
-      .then(result => setTags(result))
-  }, []);
+    if (isEditing) {
+      localStorage.setItem(saved.node_id, details)
+    }
+  }, [details])
 
   useEffect(() => {
     if (readme) {
@@ -75,10 +76,9 @@ export const Details = () => {
           <div className='edit-container'>
             <textarea
               className={classNames('edit', { error: isNotSaved })}
-              placeholder='enter github name'
               value={details}
               type='text'
-              onChange={hendleOnChange}
+              onChange={event => setDetails(event.target.value)}
             >
             </textarea>
             <Button
@@ -106,7 +106,10 @@ export const Details = () => {
           <p className='tags' key={tag.node_id}>{tag.name}</p>
         ))}
       </div>
-      <Item className='zip' as='a' href={`https://api.github.com/repos/${saved.owner.login}/${saved.name}/zipball/${saved.default_branch}`}>Download zip</Item>
+      <div className='link-container'>
+        <Item className='zip' as='a' href={`https://api.github.com/repos/${saved.owner.login}/${saved.name}/zipball/${saved.default_branch}`}>Download zip</Item>
+      </div>
+
       {readmeElement && <div className='readme' dangerouslySetInnerHTML={getMarkdownText()} />}
     </section>
   )
