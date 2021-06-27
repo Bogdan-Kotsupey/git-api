@@ -4,28 +4,24 @@ import { Route, Link } from "react-router-dom";
 import { Card, Image, Input, Form, Button } from 'semantic-ui-react'
 
 import { getRepo } from '../Api';
-
 import { Details } from '../Details/Details';
-import './ReposList.css';
 
+import './ReposList.css';
 
 
 export const ReposList = () => {
   const [repos, setRepos] = useState([]);
   const [query, setQuery] = useState('');
   const [sort, setSort] = useState('');
-  const [githubName, setGithubName] = useState(null);
+  const [githubName, setGithubName] = useState('');
+  const [search, setSearch] = useState('');
   const [name, setName] = useState(false);
-
-  const nameSearch = () => {
-    setName(true);
-  }
 
   const nameEnter = (event) => {
     setGithubName(event.target.value)
   }
 
-  const onClick = (repo) => {
+  const chooseRepo = (repo) => {
     localStorage.setItem('repo', JSON.stringify(repo));
   }
 
@@ -38,15 +34,20 @@ export const ReposList = () => {
   }
 
   useEffect(() => {
-    if (githubName) {
-      getRepo(githubName)
+    if (search) {
+      getRepo(search)
         .then(user => user)
         .then(user =>
           fetch(user.repos_url)
             .then(result => result.json())
             .then(repos => setRepos(repos)))
     }
-  }, [githubName]);
+  }, [search]);
+
+  const nameSearch = () => {
+    setName(true);
+    setSearch(githubName);
+  }
 
   repos.sort((a, b) => {
     switch (sort) {
@@ -70,12 +71,23 @@ export const ReposList = () => {
           />
           <Button onClick={nameSearch} primary>Search</Button>
         </div>
-        {name &&
+        {name && repos.length === 0 && <p className='notFound'>user not found</p>}
+        {name && repos.length > 0 &&
           <>
             <h1 className='title'>List of Repositories</h1>
             <Form.Field widths='equal' className='searchTitle' >
-              <Input type='text' value={query} onChange={hendleOnChange} placeholder="Search by title"></Input>
-              <select value={sort} onChange={reposSort} className='select'>
+              <Input
+                type='text'
+                value={query}
+                onChange={hendleOnChange}
+                placeholder="Search by title"
+              >
+              </Input>
+              <select
+                value={sort}
+                onChange={reposSort}
+                className='select'
+              >
                 <option value='date'>sort by date</option>
                 <option value='title'>sort by title</option>
               </select>
@@ -87,8 +99,13 @@ export const ReposList = () => {
                     <Image src={repo.owner.avatar_url} />
                     <Card.Content>
                       <Card.Header>{`autor: ${repo.owner.login}`}</Card.Header><br />
-                      <Link onClick={() => onClick(repo)} className='name' to='/details'>{`Title: ${repo.name}`}</Link>
-                      <br />
+                      <Link
+                        onClick={() => chooseRepo(repo)}
+                        className='name'
+                        to='/details'
+                      >
+                        {`Title: ${repo.name}`}
+                      </Link><br />
                       <Card.Meta>
                         <span className='date'>{`last update: ${repo.updated_at}`}</span>
                       </Card.Meta><br />
@@ -97,7 +114,7 @@ export const ReposList = () => {
                       </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
-                      <p className='rating'>{`Rating: ${repo.size}`}</p>
+                      <p className='rating'>{`Rating: ${repo.stargazers_count}`}</p>
                     </Card.Content>
                   </Card>
                 </li>
