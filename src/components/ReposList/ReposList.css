@@ -60,3 +60,9 @@ select {
   color: red;
   font-size: 30px;
 }
+
+.loading {
+  text-align: center;
+  color: rgb(217, 228, 13);
+  font-size: 30px;
+}

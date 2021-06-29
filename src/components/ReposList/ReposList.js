@@ -16,6 +16,7 @@ export const ReposList = () => {
   const [githubName, setGithubName] = useState('');
   const [search, setSearch] = useState('');
   const [name, setName] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const nameEnter = (event) => {
     setGithubName(event.target.value)
@@ -23,6 +24,7 @@ export const ReposList = () => {
 
   const nameSearch = () => {
     setSearch(githubName);
+    setLoading(true);
   }
 
   const chooseRepo = (repo) => {
@@ -48,8 +50,14 @@ export const ReposList = () => {
         .then(user =>
           fetch(user.repos_url)
             .then(result => result.json())
-            .then(repos => setRepos(repos))
-            .then(setName(true)))
+            .then(repos => setRepos(repos)))
+            .then(() => setLoading(false))
+        .catch(() => {
+          if(repos.length === 0) {
+            setLoading(false)
+            setName(true)
+          }
+        })
     }
   }, [search]);
 
@@ -80,6 +88,7 @@ export const ReposList = () => {
             <Button onClick={nameSearch} primary>Search</Button>
           </div>
         )}
+        {repos.length === 0 && loading && <p className='loading'>Loading...</p>}
         {repos.length === 0 && name && <p className='notFound'>user not found</p>}
         {repos.length > 0 &&
           <>
