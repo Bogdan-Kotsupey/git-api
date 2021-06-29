@@ -7,7 +7,7 @@ Displaying a list of repositories from gitHub.
 <b>Description:</b>
 
 When you enter a user's name, a list of their repositories is displayed with the name and photo of the author.
-When you click on the name of the repository, go to the page with detailed information about the repository.
+When you click on the name of the repository - you go to the page with detailed information about the repository.
 
 <b>Local development</b>
 
