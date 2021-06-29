@@ -6,20 +6,19 @@ Displaying a list of repositories from gitHub.
 
 <b>Description</b>
 
-When you enter a user's name, a list of their repositories is displayed with the name and photo of the author.
-
+When you enter a user's name, a list of their repositories is displayed with the name and photo of the author./n
 When you click on the name of the repository, go to the page with detailed information about the repository.
 
 <b>Local development</b>
 
 <b>Dependencies</b>
 
-Node v12.16.3 and higher
-NPM v6.14.4 and higher
+<li>Node v12.16.3 and higher</li>
+<li>NPM v6.14.4 and higher</li>
 
 <b>Installing</b>
 
-Fork and clone this repository
+<li>Fork and clone this repository</li>
 Run npm install in your terminal
 Run npm start
 
