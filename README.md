@@ -1,4 +1,4 @@
-Project Title
+<b>Project Title<b>
 
 Displaying a list of repositories from gitHub.
 
