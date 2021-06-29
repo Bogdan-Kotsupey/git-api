@@ -9,13 +9,12 @@ Displaying a list of repositories from gitHub.
 When you enter a user's name, a list of their repositories is displayed with the name and photo of the author.
 When you click on the name of the repository, go to the page with detailed information about the repository.
 
-<b>Local development:</b>
+<b>Local development</b>
 
 <b>Dependencies:</b>
 
 <li>Node v12.16.3 and higher</li>
 <li>NPM v6.14.4 and higher</li>
-
 
 <b>Installing:</b>
 
