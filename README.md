@@ -13,15 +13,14 @@ When you click on the name of the repository, go to the page with detailed infor
 
 <b>Dependencies:</b>
 
--Node v12.16.3 and higher
--NPM v6.14.4 and higher
+<li>Node v12.16.3 and higher</li>
+<li>NPM v6.14.4 and higher</li>
 
 <b>Installing:</b>
 
--Fork and clone this repository
--Run npm install in your terminal
--Run npm start
-
+<li>Fork and clone this repository</li>
+<li>Run npm install in your terminal</li>
+<li>Run npm start</li>
 
 <b>Task:</b> 
 
