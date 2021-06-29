@@ -22,7 +22,9 @@ When you click on the name of the repository, go to the page with detailed infor
 <li>Run npm install in your terminal</li>
 <li>Run npm start</li>
 
+
 <b>Task:</b> 
+
 
 Application should use githab API and have 2 pages:
 - list of repositories of the specific user
