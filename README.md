@@ -11,21 +11,20 @@ When you click on the name of the repository, go to the page with detailed infor
 
 <b>Local development</b>
 
+<b>Dependencies:</b>
 <ul>
-  <b>Dependencies:</b>
   <li>Node v12.16.3 and higher</li>
   <li>NPM v6.14.4 and higher</li>
 </ul>
 
 <b>Installing:</b>
-
-<li>Fork and clone this repository</li>
-<li>Run npm install in your terminal</li>
-<li>Run npm start</li>
-
+<ul>
+  <li>Fork and clone this repository</li>
+  <li>Run npm install in your terminal</li>
+  <li>Run npm start</li>
+</ul>
 
 <b>Task:</b> 
-
 
 Application should use githab API and have 2 pages:
 - list of repositories of the specific user
