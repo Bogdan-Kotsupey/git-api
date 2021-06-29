@@ -108,6 +108,7 @@ export const ReposList = () => {
                 value={sort}
                 onChange={reposSort}
                 className='select'
+                style={{margin: '0 10px'}}
               >
                 <option value='date'>sort by date</option>
                 <option value='title'>sort by title</option>
