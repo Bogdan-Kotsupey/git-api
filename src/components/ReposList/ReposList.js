@@ -35,6 +35,7 @@ export const ReposList = () => {
 
   const clearLocalStorage = () => {
     localStorage.clear();
+    window.location.reload();
   }
 
   const reposSort = (event) => {
@@ -99,7 +100,7 @@ export const ReposList = () => {
                 <option value='date'>sort by date</option>
                 <option value='title'>sort by title</option>
               </select>
-              <Button onClick={clearLocalStorage} primary>clear localstorage</Button>
+              <Button onClick={clearLocalStorage} primary>select another user</Button>
             </Form.Field>
             <ul className='list-group'>
               {repos.length > 0 && repos.filter(repo => repo.name.toLowerCase().includes(query.toLocaleLowerCase())).map(repo => (
