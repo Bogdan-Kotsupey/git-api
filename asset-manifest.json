@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/git-api/static/css/main.5f62cf5d.chunk.css",
-    "main.js": "/git-api/static/js/main.574b1226.chunk.js",
-    "main.js.map": "/git-api/static/js/main.574b1226.chunk.js.map",
+    "main.css": "/git-api/static/css/main.d18ca965.chunk.css",
+    "main.js": "/git-api/static/js/main.47f62277.chunk.js",
+    "main.js.map": "/git-api/static/js/main.47f62277.chunk.js.map",
     "runtime-main.js": "/git-api/static/js/runtime-main.bcd75141.js",
     "runtime-main.js.map": "/git-api/static/js/runtime-main.bcd75141.js.map",
     "static/css/2.9cf5f463.chunk.css": "/git-api/static/css/2.9cf5f463.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.3eddfd0f.chunk.js.map": "/git-api/static/js/3.3eddfd0f.chunk.js.map",
     "index.html": "/git-api/index.html",
     "static/css/2.9cf5f463.chunk.css.map": "/git-api/static/css/2.9cf5f463.chunk.css.map",
-    "static/css/main.5f62cf5d.chunk.css.map": "/git-api/static/css/main.5f62cf5d.chunk.css.map",
+    "static/css/main.d18ca965.chunk.css.map": "/git-api/static/css/main.d18ca965.chunk.css.map",
     "static/js/2.06e139a5.chunk.js.LICENSE.txt": "/git-api/static/js/2.06e139a5.chunk.js.LICENSE.txt",
     "static/media/semantic.min.css": "/git-api/static/media/outline-icons.ddae9b1b.woff"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.bcd75141.js",
     "static/css/2.9cf5f463.chunk.css",
     "static/js/2.06e139a5.chunk.js",
-    "static/css/main.5f62cf5d.chunk.css",
-    "static/js/main.574b1226.chunk.js"
+    "static/css/main.d18ca965.chunk.css",
+    "static/js/main.47f62277.chunk.js"
   ]
 }
