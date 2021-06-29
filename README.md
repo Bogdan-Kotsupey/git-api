@@ -11,10 +11,11 @@ When you click on the name of the repository, go to the page with detailed infor
 
 <b>Local development</b>
 
-<b>Dependencies:</b>
-
-<li>Node v12.16.3 and higher</li>
-<li>NPM v6.14.4 and higher</li>
+<ul>
+  <b>Dependencies:</b>
+  <li>Node v12.16.3 and higher</li>
+  <li>NPM v6.14.4 and higher</li>
+</ul>
 
 <b>Installing:</b>
 
