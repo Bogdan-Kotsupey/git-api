@@ -1,26 +1,26 @@
-<b>Project Title</b>
+<b>Project Title:</b>
 
 Displaying a list of repositories from gitHub.
 
 [DEMO-LINK](https://bogdan-kotsupey.github.io/git-api/)
 
-<b>Description</b>
+<b>Description:</b>
 
 When you enter a user's name, a list of their repositories is displayed with the name and photo of the author./n
 When you click on the name of the repository, go to the page with detailed information about the repository.
 
-<b>Local development</b>
+<b>Local development:</b>
 
-<b>Dependencies</b>
+<b>Dependencies:</b>
 
-<li>Node v12.16.3 and higher</li>
-<li>NPM v6.14.4 and higher</li>
+-Node v12.16.3 and higher
+-NPM v6.14.4 and higher
 
-<b>Installing</b>
+<b>Installing:</b>
 
-<li>Fork and clone this repository</li>
-<li>Run npm install in your terminal</li>
-<li>Run npm start</li>
+-Fork and clone this repository
+-Run npm install in your terminal
+-Run npm start
 
 
 <b>Task:</b> 
