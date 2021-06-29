@@ -16,6 +16,7 @@ When you click on the name of the repository, go to the page with detailed infor
 <li>Node v12.16.3 and higher</li>
 <li>NPM v6.14.4 and higher</li>
 
+
 <b>Installing:</b>
 
 <li>Fork and clone this repository</li>
