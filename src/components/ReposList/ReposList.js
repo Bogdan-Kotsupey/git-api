@@ -20,11 +20,14 @@ export const ReposList = () => {
 
   const nameEnter = (event) => {
     setGithubName(event.target.value)
+    setName(false);
   }
 
   const nameSearch = () => {
     setSearch(githubName);
-    setLoading(true);
+    if(!name) {
+      setLoading(true);
+    }
   }
 
   const chooseRepo = (repo) => {
