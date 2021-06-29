@@ -19,8 +19,8 @@ When you click on the name of the repository, go to the page with detailed infor
 <b>Installing</b>
 
 <li>Fork and clone this repository</li>
-Run npm install in your terminal
-Run npm start
+<li>Run npm install in your terminal</li>
+<li>Run npm start</li>
 
 
 <b>Task:</b> 
