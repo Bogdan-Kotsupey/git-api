@@ -1,24 +1,30 @@
 Project Title
+
 Displaying a list of repositories from gitHub.
 
 [DEMO-LINK](https://bogdan-kotsupey.github.io/git-api/)
 
 Description
+
 When you enter a user's name, a list of their repositories is displayed with the name and photo of the author. 
 When you click on the name of the repository, go to the page with detailed information about the repository.
 
 Local development
+
 Dependencies
+
 Node v12.16.3 and higher
 NPM v6.14.4 and higher
 
 Installing
+
 Fork and clone this repository
 Run npm install in your terminal
 Run npm start
 
 
 Task : 
+
 Application should use githab API and have 2 pages:
 - list of repositories of the specific user
 - detailed page of selected repository
